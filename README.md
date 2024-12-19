@@ -54,7 +54,7 @@ A desktop application built with Python and Kivy that helps users track their da
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/expense-tracker.git
+git clone https://github.com/RevivedAdvent/Personal_Expense_Tracker.git
 cd expense-tracker
 ```
 
@@ -128,9 +128,6 @@ expense-tracker/
 └── .kv files
 ```
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Acknowledgments
+## References
 - Kivy framework documentation
 - TinyDB documentation
