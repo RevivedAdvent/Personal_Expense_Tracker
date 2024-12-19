@@ -65,7 +65,7 @@ python main.py
 
 ## Requirements
 - Python 3.11 (Or Lower)
-- Kivy
+- Kivy v2.3.0
 - TinyDB
 
 ## Usage
