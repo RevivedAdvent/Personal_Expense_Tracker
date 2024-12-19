@@ -1,0 +1,632 @@
+#:import Login screens.login
+#:import Register screens.register
+#:import Home screens.home
+
+ManageWindows:
+    Login:
+    Register:
+    Home:
+
+<Login>:
+    FloatLayout:
+        Image:
+            source: "assets/images/Login_BG.png"
+            fit_mode: "cover"
+
+        Label:
+            text: "Welcome to TrackitZ"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.8, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.75}
+            color: (0.886, 0.447, 0.357, 1)
+
+        TextInput:
+            id: username
+            font_size: "20sp"
+            font_name: "assets/fonts/Regular_text.ttf"
+            background_color: (0, 0, 0, 0.2)
+            foreground_color: (0.580, 0.690, 0.855, 1)
+            hint_text: "Enter your username"
+            size_hint: (0.4, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.6}
+            multiline: False
+
+        TextInput:
+            id: password
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "20sp"
+            background_color: (0, 0, 0, 0.2)
+            foreground_color: (0.580, 0.690, 0.855, 1)
+            hint_text: "Enter your password"
+            password: True
+            size_hint: (0.4, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.475}
+            multiline: False
+
+        Button:
+            text: "Login"
+            font_name: "assets/fonts/Buttons.otf"
+            font_size: "25sp"
+            background_color: (0, 0, 0, 0.2)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.3}
+            on_release: root.login(username.text, password.text)
+
+        Button:
+            text: "Register"
+            font_size: "25sp"
+            font_name: "assets/fonts/Buttons.otf"
+            background_color: (0, 0, 0, 0.2)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.15}
+            on_release: root.manager.current = 'register'
+        
+        Label:
+            text: "Don't have an Account? Please Register Above"
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "20sp"
+            background_color: (0, 0, 0, 1)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.05}
+
+<Register>:
+    FloatLayout:
+        Image:
+            source: "assets/images/Login_BG.png"
+            fit_mode: "cover"
+
+        Label:
+            text: "Register"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.8, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.75}
+            color: (0.886, 0.447, 0.357, 1)
+
+        TextInput:
+            id: reg_username
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "20sp"
+            background_color: (0, 0, 0, 0.2)
+            foreground_color: (0.580, 0.690, 0.855, 1)
+            hint_text: "Create a username"
+            size_hint: (0.4, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.6}
+            multiline: False
+
+        TextInput:
+            id: reg_password
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "20sp"
+            background_color: (0, 0, 0, 0.2)
+            foreground_color: (0.580, 0.690, 0.855, 1)
+            hint_text: "Create a password"
+            password: True
+            size_hint: (0.4, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.475}
+            multiline: False
+
+        Button:
+            text: "Register"
+            font_name: "assets/fonts/Buttons.otf"
+            font_size: "25sp"
+            background_color: (0, 0, 0, 0.2)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.3}
+            on_release: root.register(reg_username.text, reg_password.text)  # Call the `register` method in Register class
+
+        Button:
+            text: "Back to Login"
+            font_name: "assets/fonts/Buttons.otf"
+            font_size: "25sp"
+            background_color: (0, 0, 0, 0.2)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.15}
+            on_release: root.manager.current = 'login'
+        
+        Label:
+            text: "Already have an account? Go back to login"
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "20sp"
+            background_color: (0, 0, 0, 1)
+            color: (0.886, 0.447, 0.357, 1)
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.65, "y": 0.05}
+
+
+<Home>:
+    FloatLayout:
+        Image:
+            source: "assets/images/BG.jpg"
+            fit_mode: "cover"
+
+        Label:
+            text: "Transaction Details"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            pos_hint: {"center_x": 0.3, "y": 0.9}
+            color: (0.298, 0.231, 0.302, 1)
+
+        Label:
+            text: "Enter date in DD/MM/YYYY format: "
+            color: (0,0,0,1)
+            multiline: False
+            size_hint: (0.3, 0.3)
+            pos_hint: {"center_x": 0.25, "y": 0.725}
+            font_size: "25sp"
+            font_name: "assets/fonts/Regular_text.ttf"
+
+        TextInput:
+
+            id: date_input
+            text: root.get_today_date()
+            background_color: (0.580, 0.690, 0.855, 0.5)
+            foreground_color: (0,0,0,1)
+            multiline: False
+            size_hint: (0.1, 0.05)
+            pos_hint: {"center_x": 0.4, "y": 0.85}
+            font_size: "25sp"
+            font_name: "assets/fonts/Regular_text.ttf"
+
+        Button:
+            text: "Save Transactions"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.2, "y": 0.325}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.save_transactions()
+        
+        TextInput:
+            id: budget_input
+            text: "10000"
+            background_color: (0.580, 0.690, 0.855, 0.5)
+            foreground_color: (0,0,0,1)
+            multiline: False
+            size_hint: (0.1, 0.05)
+            input_type: 'number'
+            pos_hint: {"center_x": 0.46, "y": 0.34}
+            font_size: "25sp"
+            font_name: "assets/fonts/Regular_text.ttf"
+        
+        Label:
+            text: "Budget (Monthly):"
+            color: (0,0,0,1)
+            multiline: False
+            size_hint: (0.3, 0.3)
+            pos_hint: {"center_x": 0.35, "y": 0.2175}
+            font_size: "25sp"
+            font_name: "assets/fonts/Regular_text.ttf"
+        
+        Button:
+            text: "Daily Transactions"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.13, "y": 0.2}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'view'
+        
+        Button:
+            text: "Monthly Transactions"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.2}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'monthly'
+        
+        Button:
+            text: "Edit Transactions"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.47, "y": 0.2}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'edit'
+        
+        Button:
+            text: "Logout"
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'login'
+            background_color: (1,0,0,0.5)
+            color: (0,0,0,1)
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.05}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (0.5,0.4)
+            pos_hint: {'center_x': 0.3, 'center_y': 0.65}
+            spacing: 10
+            padding: 20
+            
+            # Transactions Section
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 10
+                
+                BoxLayout:
+                    Label:
+                        text: "Expense 1"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        size_hint_x: 0.05
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                    TextInput:
+                        id: expense1
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        size_hint_x: 0.15
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        font_size: "25sp"
+                    Label:
+                        text: "Amount 1"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                        size_hint_x: 0.05
+                    TextInput:
+                        id: amount1
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        input_type: 'number'
+                        font_size: "25sp"
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        size_hint_x: 0.1
+                
+                BoxLayout:
+                    Label:
+                        text: "Expense 2"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        size_hint_x: 0.05
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                    TextInput:
+                        id: expense2
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        size_hint_x: 0.15
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        font_size: "25sp"
+                    Label:
+                        text: "Amount 2"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                        size_hint_x: 0.05
+                    TextInput:
+                        id: amount2
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        input_type: 'number'
+                        font_size: "25sp"
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        size_hint_x: 0.1
+                
+                BoxLayout:
+                    Label:
+                        text: "Expense 3"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        size_hint_x: 0.05
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                    TextInput:
+                        id: expense3
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        size_hint_x: 0.15
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        font_size: "25sp"
+                    Label:
+                        text: "Amount 3"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                        size_hint_x: 0.05
+                    TextInput:
+                        id: amount3
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        input_type: 'number'
+                        font_size: "25sp"
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        size_hint_x: 0.1
+                
+                BoxLayout:
+                    Label:
+                        text: "Expense 4"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        size_hint_x: 0.05
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                    TextInput:
+                        id: expense4
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        size_hint_x: 0.15
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        font_size: "25sp"
+                    Label:
+                        text: "Amount 4"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                        size_hint_x: 0.05
+                    TextInput:
+                        id: amount4
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        input_type: 'number'
+                        font_size: "25sp"
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        size_hint_x: 0.1
+                
+                BoxLayout:
+                    Label:
+                        text: "Expense 5"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        size_hint_x: 0.05
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                    TextInput:
+                        id: expense5
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        size_hint_x: 0.15
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        font_size: "25sp"
+                    Label:
+                        text: "Amount 5"
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        color: (0.298, 0.231, 0.302, 1)
+                        font_size: "25sp"
+                        size_hint_x: 0.05
+                    TextInput:
+                        id: amount5
+                        font_name: "assets/fonts/Regular_text.ttf"
+                        multiline: False
+                        input_type: 'number'
+                        font_size: "25sp"
+                        background_color: (0,0,0,0.2)
+                        color: (0,0,0,1)
+                        size_hint_x: 0.1
+
+<View>:
+    FloatLayout:
+        Image:
+            source: "assets/images/BG.jpg"
+            fit_mode: "cover"
+        
+        Label:
+            text: "Daily Transactions"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            pos_hint: {"center_x": 0.3, "y": 0.9}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        Label:
+            text: "Select Date:"
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "25sp"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.15, "y": 0.8}
+            color: (0, 0, 0, 1)
+        
+        TextInput:
+            id: date_input
+            multiline: False
+            size_hint: (0.1, 0.05)
+            pos_hint: {"center_x": 0.25, "y": 0.825}
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "25sp"
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            on_text_validate: root.load_transactions()
+        
+        Button:
+            text: "View Transactions"
+            size_hint: (0.15, 0.05)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.4, "y": 0.825}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.load_transactions()
+        
+        Button:
+            text: "Back to Home"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.03}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'home'
+
+<Monthly>:
+    FloatLayout:
+        Image:
+            source: "assets/images/BG.jpg"
+            fit_mode: "cover"
+        
+        Label:
+            text: "Monthly Transactions"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            pos_hint: {"center_x": 0.3, "y": 0.9}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        Label:
+            text: "Select Month & Year:"
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "25sp"
+            size_hint: (0.2, 0.1)
+            pos_hint: {"center_x": 0.125, "y": 0.8}
+            color: (0, 0, 0, 1)
+        
+        TextInput:
+            id: month_input
+            multiline: False
+            size_hint: (0.1, 0.05)
+            pos_hint: {"center_x": 0.25, "y": 0.825}
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "25sp"
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            on_text_validate: root.load_transactions()
+        
+        Button:
+            text: "View Transactions"
+            size_hint: (0.15, 0.05)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.4, "y": 0.825}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.load_transactions()
+        
+        Button:
+            text: "Back to Home"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.03}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'home'
+
+<Edit>:
+
+    FloatLayout:
+        Image:
+            source: "assets/images/BG.jpg"
+            fit_mode: "cover"
+        
+        Label:
+            text: "Edit Your Expense"
+            font_name: "assets/fonts/Heading.ttf"
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            pos_hint: {"center_x": 0.3, "y": 0.75}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        Label:
+            text: "Select Date:"
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.225, "y": 0.65}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        TextInput:
+            id: date_input
+            multiline: False
+            pos_hint: {"center_x": 0.4, "y": 0.67}
+            font_name: "assets/fonts/Regular_text.ttf"
+            font_size: "25sp"
+            size_hint: (0.2, 0.05)
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            hint_text: "DD/MM/YYYY"
+        
+        Label:
+            text: 'Existing Expense:'
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.2, "y": 0.55}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        TextInput:
+            id: old_expense_input
+            multiline: False
+            font_size: "25sp"
+            size_hint: (0.2, 0.05)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.4, "y": 0.57}
+            hint_text: 'Enter existing expense name'
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+        
+        Label:
+            text: 'New Expense:'
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.21, "y": 0.45}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        TextInput:
+            id: new_expense_input
+            multiline: False
+            font_size: "25sp"
+            size_hint: (0.2, 0.05)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.4, "y": 0.47}
+            hint_text: 'Enter new expense name'
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+
+        Button:
+            text: 'Update Expense'
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.25}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.update_expense()
+        
+        Label:
+            text: 'New Amount:'
+            font_size: "40sp"
+            size_hint: (0.5, 0.1)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.21, "y": 0.35}
+            color: (0.298, 0.231, 0.302, 1)
+        
+        TextInput:
+            id: new_amount_input
+            hint_text: 'Enter new amount'
+            input_filter: 'float'
+            multiline: False
+            font_size: "25sp"
+            size_hint: (0.2, 0.05)
+            font_name: "assets/fonts/Regular_text.ttf"
+            pos_hint: {"center_x": 0.4, "y": 0.37}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+
+        Button:
+            text: "Back to Home"
+            size_hint: (0.15,0.08)
+            font_size: "20sp"
+            pos_hint: {"center_x": 0.3, "y": 0.15}
+            background_color: (0,0,0,0.2)
+            color: (0,0,0,1)
+            font_name: "assets/fonts/Buttons.otf"
+            on_press: root.manager.current = 'home'
