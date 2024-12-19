@@ -69,10 +69,9 @@ python main.py
 ```
 
 ## Requirements
-- Python 3.x
+- Python 3.11 (Or Lower)
 - Kivy
 - TinyDB
-- Other dependencies listed in requirements.txt
 
 ## Usage
 
@@ -117,17 +116,28 @@ python main.py
 ```
 expense-tracker/
 ├── main.py
-├── home.py
-├── view.py
-├── monthly.py
-├── login.py
+├── financetracker.kv
+├── screens/
+    ├── register.py
+    ├── login.py
+    ├── home.py
+    ├── view.py
+    ├── edit.py
+    ├── monthly.py
 ├── database/
 ├── assets/
-│   ├── fonts/
-│   └── images/
+    ├── fonts/
+        ├── Buttons.otf
+        ├── Heading.ttf
+        ├── Regular_text.ttf
+    └── images/
+        ├── BG.jpg
+        ├── Login_BG.png
+        ├── BG.png
 └── .kv files
 ```
 
 ## References
-- Kivy framework documentation
-- TinyDB documentation
+- [Kivy framework documentation](https://kivy.org/doc/stable/)
+- [TinyDB documentation](https://tinydb.readthedocs.io/en/latest/)
+- https://docs.python.org/3/
