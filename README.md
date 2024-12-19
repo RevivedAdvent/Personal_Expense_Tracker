@@ -134,7 +134,6 @@ expense-tracker/
         ├── BG.jpg
         ├── Login_BG.png
         ├── BG.png
-└── .kv files
 ```
 
 ## References
