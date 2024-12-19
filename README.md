@@ -58,12 +58,7 @@ git clone https://github.com/RevivedAdvent/Personal_Expense_Tracker.git
 cd expense-tracker
 ```
 
-2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-
-3. Run the application
+2. Run the application
 ```bash
 python main.py
 ```
